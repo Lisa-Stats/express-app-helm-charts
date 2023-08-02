@@ -1,0 +1,29 @@
+name: lint-helm-charts
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+  lint-testing-charts:
+    name: Lint testing charts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout express-app-helm-charts repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 100
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.11.2
+
+      - name: Run dev linting
+        working-directory: ./charts
+        run: helm lint *
