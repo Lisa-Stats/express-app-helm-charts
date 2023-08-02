@@ -1,0 +1,56 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: express-app-charts
+  namespace: argocd
+spec:
+  generators:
+    - merge:
+        mergeKeys:
+          - path
+        generators:
+          - git:
+              repoURL: git@github.com:Lisa-Stats/express-app-helm-charts.git
+              revision: main
+              directories:
+                - path: charts/*
+                - path: charts/argo-cd
+                  exclude: true
+          - list:
+              elements:
+                - path: charts/sealed-secrets
+                  namespace: testing
+                - path: charts/cert-manager
+                  namespace: ingress-nginx
+                - path: charts/ingress-nginx
+                  namespace: ingress-nginx
+                - path: charts/express-app
+                  namespace: testing
+  template:
+    metadata:
+      name: '{{path.basename}}-testing'
+      labels:
+        app: '{{path.basename}}'
+        env: testing
+    spec:
+      project: general-project
+      source:
+        repoURL: git@github.com:Lisa-Stats/express-app-helm-charts.git
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        namespace: '{{namespace}}'
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          prune: true    # delete resources if they no longer exist in git repo
+          selfHeal: false # enables syncing when changes are made to the live cluster
+        retry:
+          limit: 2 # number of failed sync attempt retries; unlimited number of attempts if less than 0
+          backoff:
+            duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
+            factor: 2 # a factor to multiply the base duration after each failed retry
+            maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
+        syncOptions:
+          - ApplyOutOfSyncOnly=true
+          - CreateNamespace=true
