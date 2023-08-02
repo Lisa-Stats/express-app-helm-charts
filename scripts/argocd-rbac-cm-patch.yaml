@@ -1,0 +1,5 @@
+data:
+  policy.csv: |
+    g, superuser, role:admin
+    g, guest, role:readonly
+  policy.default: role:''
