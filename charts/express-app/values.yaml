@@ -8,8 +8,7 @@ image:
   repository: registry.digitalocean.com/registry-real-world-nyc3/express
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0"
-
+  tag: "sha-bc7293e06c948d75853e711ec0217a97aa3aebbb"
 imagePullSecrets:
   - name: registry-registry-real-world-nyc3
 nameOverride: ""
