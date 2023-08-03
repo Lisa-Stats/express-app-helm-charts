@@ -1,10 +1,12 @@
 # Express app deployed with supporting helm charts
 ## Chart Features
-- This includes an express app deployed as a helm chart along with other helm charts to support it. These include:
+- This includes an express app deployed as a helm chart along with other helm charts to support it:
 - [argocd](https://argoproj.github.io/argo-helm)
+  - add explanation here
 - [cert-manager](https://charts.jetstack.io)
 - [ingress-nginx](https://github.com/kubernetes/ingress-nginx)
 - [sealed-secrets](https://github.com/bitnami-labs/sealed-secrets)
+- [express-app](https://github.com/Lisa-Stats/express-app)
 
 ## Implementation
 - `argoCD` is first installed as a helm chart
