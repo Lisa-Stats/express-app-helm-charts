@@ -1,6 +1,6 @@
 # Express app deployed with supporting helm charts
 ## Chart Features
-- This includes an Express Node.js app deployed as a helm chart along with other helm charts to support it:
+- This includes an Node.js Express app deployed as a helm chart along with other helm charts to support it:
   - [Argocd](https://argoproj.github.io/argo-helm)
     - A gitops continuous delivery tool for kubernetes that watches a repository and updates the `Kubernetes` cluster accordingly
   - [Cert-manager](https://charts.jetstack.io)
