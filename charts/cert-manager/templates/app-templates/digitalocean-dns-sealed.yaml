@@ -1,0 +1,27 @@
+{
+  "kind": "SealedSecret",
+  "apiVersion": "bitnami.com/v1alpha1",
+  "metadata": {
+    "name": "digitalocean-dns",
+    "namespace": "ingress-nginx",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "name": "digitalocean-dns",
+        "namespace": "ingress-nginx",
+        "creationTimestamp": null,
+        "annotations": {
+          "helm.sh/hook": "pre-install, pre-upgrade",
+          "helm.sh/hook-delete-policy": "before-hook-creation",
+          "helm.sh/hook-weight": "-1"
+        }
+      }
+    },
+    "encryptedData": {
+      "access-token": "AgA8lh3FmPnKHp5Kf/S5r9C4mDnKHKD8iVb9EkInQ9aQhmbQuiytoP1FALzrNfT1qF3u6QKbcsTqDHWgDJHEt40VSDwST8Z8ik21oDkgI+demaMNJTwdj9aIhfGEBRRxxiqd+nuEABppRgDJcav+GZ/lMy+K2mD6i3xLfizc1NFHEx5lr4u5O0zjzZBQiJeCkwtew/UEonQBMJeURQQJREir0LuYbZ8Hhh+1UXPG44W4LzQsZLuvXWkCZ2lL+oUYFVuQHw3MhSCcprwFmQE5fwbJaaJr7EIPYNUp9Ebt2dQAmKzRU4ipv+Hxd29RS0eCaP15X01RHcGTM9mimcnOg10LG/Td9Tjd5X7vIhnh0mwCNeFLTyxteVgZNl+sLHwg0vyCgIFrbs0jEWWspV4H3avuta2BViHGguuV2goKZbmxvnN7wWb1aulopemtE/HacGN26+JD0xWDKDGpG7KaL6C41i6/j5NvxpjvHTBtpRtuswdPX4sGdeVi+inOg1KM7eRHyIQI9zloMh9cdENeweLBaYvnYJJmC0nYod9QQZSpi/pTdFCCiEx58YvedjKbAxrbdo/ZOth5NjAQLZLfUrmLPhP5z/fWUIohh7xWn5nHJmyypbNjdaSjqPdhobhUzpHN6DwncangNz1CeP2hc2s5HQK51ppxxxqdSHWOTtngcNJVKag86aBDjbk0aqpAG1VDT1ZXGIWB+CVlzkO09DseViC0C9L1ZwlFzxW5Lfc/a2X8FvUXA6vdtMW5yNaDYQiG9yq/yECpME/OqttiUKLN452sWGzfNg==",
+      "digitalocean_api_token": "AgBlvbIUcHv+CpKyx8wMdnS812BIEnbuQO6XQ5dXpoHTy/HHfM4vP7UnMTTnXethWHg6ySGfog8uGarK8vCzqKGO2r0gWv+mAmP9fKWL+EgDzkUxJNmyaXbLe95NY5gZ55+d1mcrGN4qePVrhAldISWjSLxxReqmZ09lATd+mcjmb5xiOQ6r0K9m1m9W8SUhDzjP1tVubXLmI+oFiQhqxxADnNsqnk8+F4zkLeVUDXijFM1RffKpI8XDlk3JPUobW1iYxuDLeyXMbow7xbcLYCrx8S9+wHoww5sgivn/rloHjKpsAWu2W345q0apAxn6wjw7L5Bi1mCvf37S5aiEFFmmrVMBuMm9KTj70EJJH0xEA8JKGOnLVsmFjSuD0di/6SzpNvY6eUTA6ZB/jp8VuZsg1+ZNGM9n0hpC3EaOF2NiR5CL2Nd5ETQCxEf2ThL5qwaZlDYvgWVNfy1u2GagHioKVQplSvtRGX+J+jg5dHeCqS42xPgh0pmw+oo6rjA07f3KH/4yF9ifZKmwSb8vNe99HDSaA0fslroQpnQK1OAIz3LZOEr6fRaLvDqPCI4JHhG9w2mdhv59ZBctTKlxQEZ8JlOuHfTqIfAOm8UeQJzLhuefesLY2jMWy66gxa2TKM1r07+7J6/2wJzgxbFpIRUBRJmoZ9EECjSgClRwASlhQkn6GxbNTV8vfAn18Js6plVuGUSMccpb3cShwPUiBT0a4cDAjquFg3JFcGHTs04IKdGDNuOX5FrszVPZ06lhgNmfREv091dYZ/hmA0lm7fga/iMHa3lZ2Q=="
+    }
+  }
+}
